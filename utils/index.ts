@@ -1,12 +1,13 @@
+require("dotenv").config();
 import { CarProps } from "@/types";
 import { FilterProps } from "@/types";
 
 export async function fetchCars(filters: FilterProps) {
   const { manufacturer, year, model, limit, fuel } = filters;
 
-  const headers = {
-    "X-RapidAPI-Key": "20f645ed81msh74355bc40b0a66fp149c58jsn8aed8b0166f4",
-    "X-RapidAPI-Host": "cars-by-api-ninjas.p.rapidapi.com",
+  const headers: HeadersInit = {
+    "X-RapidAPI-Key": process.env.X_RAPID_API_KEY || "",
+    "X-RapidAPI-Host": process.env.X_RAPID_API_HOST || "",
   };
   const response = await fetch(
     `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`,
