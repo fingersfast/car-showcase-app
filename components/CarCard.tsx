@@ -21,7 +21,7 @@ const CarCard = ({ car }: CarCardProps) => {
   return (
     <div className="car-card group">
       <div className="car-card__content">
-        <h2 className="car-car__content-title">
+        <h2 className="car-card__content-title">
           {make} {model}
         </h2>
       </div>
@@ -59,13 +59,13 @@ const CarCard = ({ car }: CarCardProps) => {
               {transmission === "a" ? "Automatic" : "Manual"}
             </p>
           </div>
-          <div className="car-car__icon">
+          <div className="car-card__icon">
             <Image src="/tire.svg" width={20} height={20} alt="seat" />
             <p className="car-card__icon-text">{drive.toUpperCase()}</p>
           </div>
           <div className="car-card__icon">
             <Image src="/gas.svg" width={20} height={20} alt="seat" />
-            <p className="car-car__icon-text">{city_mpg} MPG</p>
+            <p className="car-card__icon-text">{city_mpg} MPG</p>
           </div>
         </div>
 
